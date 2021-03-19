@@ -1,11 +1,10 @@
-#python bisection.py
 import math
 import numpy as np;
 import matplotlib.pyplot as plt
 from prettytable import PrettyTable
 
 
-f = lambda x: (x / (1-x)) * math.sqrt(6/(2+x)) - 0.05  #causes division by zero error
+f = lambda x: (x / (1-x)) * math.sqrt(6/(2+x)) - 0.05
 #f = lambda x: x*x*x - 2400*(x*x) - 3*x +2
 
 #plotting data on matplotlib
@@ -32,7 +31,7 @@ def bisection(xl,xr,Es,max_iteration):
     if(f(xl)*f(xr) > 0):
         print("Invalid Input of Xl and Xu")
         return
-    xm_old = 0 #random value
+    xm_old = xl + xr #random value
     for i in range(max_iteration):
         xm = (xl + xr)/2
         Sign = f(xm) * f(xl)
@@ -50,7 +49,6 @@ def bisection(xl,xr,Es,max_iteration):
 def bisection2(xl,xr):
     xl = float(xl);xr = float(xr);
     table = PrettyTable(["Itteration","Xl","Xr","Xm","Abs Relative Appx Error"])
-    #table.field_names(["Itteration","Xl","Xr","Xm","Abs Relative Appx Error"])
     if(f(xl)*f(xr) > 0):
         print("Invalid Input of Xl and Xu")
         return
@@ -77,6 +75,6 @@ def bisection2(xl,xr):
     print(table)
     print (xm)
 
-ans = bisection(0.001,0.99,0.000005,10000)
+ans = bisection(0.001,0.99,0.5,100)
+print("Root from Bisection:",ans)
 bisection2(0.001,0.99)
-print(ans)
