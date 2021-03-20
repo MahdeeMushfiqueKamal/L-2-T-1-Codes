@@ -1,7 +1,9 @@
-#include<iostream>
+ub#include<iostream>
+#include<cstdlib>
 #define watch(x) cout<<(#x)<<" is "<<(x)<<endl;
 
 using namespace std;
+void null_message();
 
 struct Node{
     int id;
@@ -28,7 +30,7 @@ public:
     void sequence();
     void eleminate();
     int getLen(){return len;}
-
+    ~PillowGame();
 };
 
 int main()
@@ -66,7 +68,7 @@ int main()
             PG.enterPlayer(x);
         }
         else if(command == 'M'){
-            if(PG.getLen()!=1)cout<<"Player 2 has been eliminated at t="<<t<<endl;
+            if(PG.getLen()!=1)cout<<"Player "<<PG.pillowHolderId()<<" has been eliminated at t="<<t<<endl;
             PG.eleminate();
             time = t;
         }
@@ -78,7 +80,8 @@ int main()
 PillowGame::PillowGame(){
     head = new Node;
     tail = new Node;
-    pillow = new Node;
+    //pillow = new Node;
+    if(head==NULL || tail==NULL)null_message();
     head->prev = NULL;
     head->next = NULL;
     tail->prev = NULL;
@@ -109,6 +112,7 @@ void PillowGame::pass(){
 void PillowGame::addPlayer(int r){
     if(len > 1){
         Node *new_node = new Node;
+        if(new_node==NULL)null_message();
         new_node->id = ++id_gen;
         new_node-> reflx = r;
         len++;
@@ -141,6 +145,7 @@ void PillowGame::addPlayer(int r){
 void PillowGame::enterPlayer(int r){
     if(len==1)return;
     Node *new_node = new Node;
+    if(new_node==NULL)null_message();
     new_node->id = ++id_gen;
     new_node->reflx = r;
     len++;
@@ -205,4 +210,21 @@ void PillowGame::eleminate(){
 
     len--;
     if(len==1)cout<<"Game over : Player "<< pillow->id <<" wins!!"<<endl;
+}
+
+
+
+void null_message(){
+    cout<<"Allocated memory is NULL, Exiting Program..."<<endl;
+    exit(0);
+}
+
+PillowGame::~PillowGame(){
+    Node *temp;
+    while(head!=tail){
+        temp = head->next;
+        delete head;
+        head = temp;
+    }
+    delete head;
 }
