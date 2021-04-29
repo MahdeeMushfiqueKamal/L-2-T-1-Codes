@@ -87,6 +87,8 @@ public:
 
 int main()
 {
+    ofstream out;
+    out.open("out.txt");
     int C,R,L,F,u,v,cx,px,cy,fy;
 
     cin>>C>>R>>L>>F;
@@ -113,11 +115,11 @@ int main()
         total_collected += collected[fy];
     }
 
-    if(total_collected == total_pieces) cout<<"Mission Accomplished"<<endl;
-    else cout<<"Mission Impossible"<<endl;
-    cout<<total_collected<<" out of "<<total_pieces<<" pieces are collected"<<endl;
+    if(total_collected == total_pieces) out<<"Mission Accomplished"<<endl;
+    else out<<"Mission Impossible"<<endl;
+    out<<total_collected<<" out of "<<total_pieces<<" pieces are collected"<<endl;
     for(int i=0;i<F;i++){
-        cout<<i<<" collected "<<collected[i]<<" pieces"<<endl;
+        out<<i<<" collected "<<collected[i]<<" pieces"<<endl;
     }
     return 0;
 }
