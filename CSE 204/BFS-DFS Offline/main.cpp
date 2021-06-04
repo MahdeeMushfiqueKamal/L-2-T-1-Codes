@@ -18,6 +18,7 @@ public:
         }
 
     }
+    ~Graph();
 
     void addEdge(int u,int v){
         adj[u].push_back(v);
@@ -124,4 +125,9 @@ int main()
     return 0;
 }
 
+
+Graph::~Graph(){
+    delete []adj;
+    delete []pieces;
+}
 
