@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1623336403 source:e:\level 2- term 1\level 2- term 1 codes\cse 204\sorting\main.cpp
+	<iostream>
+	<cstdlib>
+	<time.h>
+

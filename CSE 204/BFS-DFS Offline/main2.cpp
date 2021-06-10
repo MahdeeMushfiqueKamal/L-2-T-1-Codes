@@ -91,23 +91,18 @@ int main()
     ofstream out;
     out.open("out.txt");
 
-    ifstream in;
-    in.open("in.txt",ios::in);
-
-    int C,R,L,F,u,v,cx,px,cy,fy;
-
-    in>>C>>R>>L>>F;
+    cin>>C>>R>>L>>F;
     Graph mamaland(C);
 
     for(int i=0;i<R;i++){
-        in>>u>>v;
+        cin>>u>>v;
         mamaland.addEdge(u,v);
     }
 
     int total_pieces=0;
 
     for(int i=0;i<L;i++){
-        in>>cx>>px;
+        cin>>cx>>px;
         mamaland.addPieces(cx,px);
         total_pieces += px;
     }
@@ -115,7 +110,7 @@ int main()
     int total_collected = 0;
     int collected[F];
     for(int i=0;i<F;i++){
-        in>>cy>>fy;
+        cin>>cy>>fy;
         collected[fy] = mamaland.DFS(cy);
         total_collected += collected[fy];
     }
