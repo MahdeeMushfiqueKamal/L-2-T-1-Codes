@@ -51,11 +51,13 @@ void compareAndAdjust(Pair *ans, Pair tp);
 
 int main()
 {
-    cin>>n;
+    ifstream in;
+    in.open("input.txt");
+    in>>n;
 
     Point arr[n],arrX[n],arrY[n];
     for(int i=0;i<n;i++){
-        cin>>arr[i].x>>arr[i].y;
+        in>>arr[i].x>>arr[i].y;
         arrX[i].x = arrY[i].x = arr[i].x;
         arrX[i].y = arrY[i].y = arr[i].y;
     }
