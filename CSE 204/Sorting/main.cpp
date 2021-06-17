@@ -60,9 +60,9 @@ int main()
         after = clock();
         cout<<"Time for sorting "<<n<<" numbers using quick sort is: "<<double( (after-before)* 1000000 / CLOCKS_PER_SEC)<<" micro second"<<endl;
 
-//        cout<<"\nAfter Sorting: \n";
-//        for(int i=0;i<n;i++)cout<<arr1[i]<<"    "<<arr2[i]<<endl;
-//        cout<<endl<<endl;
+        cout<<"\nAfter Sorting: \n";
+        for(int i=0;i<n;i++)cout<<arr1[i]<<"    "<<arr2[i]<<endl;
+        cout<<endl<<endl;
 
         delete []arr1;
         delete []arr2;
