@@ -23,7 +23,7 @@ n = int(input("1. Enter the number of sub-intervals:   "))
 t1 = 8
 t2 = 30
 
-print(findArea(8,30,n))
+print(findArea(t1,t2,n))
 
 print("----------Part 2----------")
 table = PrettyTable(["Sub-intervals","Calculated value","Abs Relative Appx Error"])
