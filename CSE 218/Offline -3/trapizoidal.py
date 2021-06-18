@@ -8,15 +8,14 @@ q = 2100
 def f(t):
     return u * math.log(m0 / (m0 - q*t) ) - 9.8*t
 
-def findArea(low_limit,high_limit,n):
-    area = 0
-    h = (high_limit-low_limit)/n
-    a = low_limit
+def findArea(a,b,n):
+    h = (b-a)/n
+    area = f(a) + f(b)
 
-    for i in range(n):
-        trap = 0.5* h * (f(a+h) + f(a))
-        area += trap
-        a += h
+    for i in range(1,n):
+        area += 2* f(a + i*h)
+    
+    area *= (0.5*h)
     return area
 
 
@@ -26,7 +25,7 @@ t2 = 30
 
 print(findArea(8,30,n))
 
-print("Part 2")
+print("----------Part 2----------")
 table = PrettyTable(["Sub-intervals","Calculated value","Abs Relative Appx Error"])
 
 
