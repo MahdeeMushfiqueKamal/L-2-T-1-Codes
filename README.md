@@ -4,14 +4,15 @@ This repository contains codes from 2 of my course in Level-2, Term-1
 
 # CSE204: Data Structure and Algorithm I
 
-- Week 1 : Arraylist
-- Week 3: Linked list
-- Week 4: Stack and Queue
-- Week 5:  Binary Search Tree
-- Week 6: Heap
-- Week 8: BFS, DFS
-- Week 9: Merge sort, Quick sort
+- Week 01 : Arraylist
+- Week 03: Linked list
+- Week 04: Stack and Queue
+- Week 05:  Binary Search Tree
+- Week 06: Heap
+- Week 08: BFS, DFS
+- Week 09: Merge sort, Quick sort
 - Week 10: Divide and Conquer 
+- Week 11: Greedy Technique
 
 # Numerical Method CSE 218
 - Offline 1: Bisection Method
