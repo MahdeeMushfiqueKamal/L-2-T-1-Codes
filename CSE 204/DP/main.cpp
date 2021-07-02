@@ -10,7 +10,6 @@ ll mod = 1e9 + 7;
 
 
 int calculateWays(int dice , int sum){
-    //cout<< "calculateWays(" <<dice<<" , "<<sum<<") is being executed\n";
 
     if(sum < dice){
         return dp[dice][sum] = 0;
@@ -21,12 +20,13 @@ int calculateWays(int dice , int sum){
 
     ll ways = 0;
     //watch(f[dice])
-    for(int i=1; i<= f[dice] ; i++){
-
+    for(int i=1; i<= min(f[dice],sum) ; i++){
         if(sum - i > 0 && dice-1 >0){
-                //cout<< "calculateWays(" <<dice-1<<" , "<<sum-i<<") is being called\n";
             if(dp[dice-1][sum-i] != -1) ways += dp[dice-1][sum-i];
-            else ways += calculateWays(dice -1 , sum - i);
+            else{
+                //cout<< "calculateWays(" <<dice-1<<" , "<<sum-i<<") is being called\n";
+                ways += calculateWays(dice -1 , sum - i);
+            }
             ways %= mod;
         }
 
