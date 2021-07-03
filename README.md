@@ -13,6 +13,7 @@ This repository contains codes from 2 of my course in Level-2, Term-1
 - Week 09: Merge sort, Quick sort
 - Week 10: Divide and Conquer 
 - Week 11: Greedy Technique
+- Week 12: Dynamic Programming
 
 # Numerical Method CSE 218
 - Offline 1: Bisection Method
@@ -24,3 +25,6 @@ This repository contains codes from 2 of my course in Level-2, Term-1
 - Online 2: Interpolation
   - Newton's Divided Difference Interpolation
   - Lagrange's Interpolation
+- Online 3: Curve Fitting
+  - Linear Regression 
+  - Non Linear Regression

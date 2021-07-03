@@ -19,19 +19,12 @@ int calculateWays(int dice , int sum){
     if(dp[dice][sum] != -1) return dp[dice][sum];
 
     ll ways = 0;
-    //watch(f[dice])
     for(int i=1; i<= min(f[dice],sum) ; i++){
         if(sum - i > 0 && dice-1 >0){
-            if(dp[dice-1][sum-i] != -1) ways += dp[dice-1][sum-i];
-            else{
-                //cout<< "calculateWays(" <<dice-1<<" , "<<sum-i<<") is being called\n";
-                ways += calculateWays(dice -1 , sum - i);
-            }
+            ways += calculateWays(dice -1 , sum - i);
             ways %= mod;
         }
-
     }
-
     return dp[dice][sum] = ways;
 }
 
@@ -41,8 +34,10 @@ int main()
     for(int i=0;i< 105; i++){
         for(int j=0; j< 10005 ; j++) dp[i][j] = -1;
     }
-    cin>>n>>s;
-    for(int i=1; i<=n;i++)cin>>f[i];
+    ifstream in;
+    in.open("input.txt");
+    in>>n>>s;
+    for(int i=1; i<=n;i++)in>>f[i];
 
 
     cout<<calculateWays(n,s)<<endl;
